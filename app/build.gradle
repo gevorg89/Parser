@@ -74,6 +74,9 @@ dependencies {
     def jsoup = "1.11.3"
     implementation "org.jsoup:jsoup:$jsoup"
 
+    def livedata_ktx = "2.3.1"
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$livedata_ktx")
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

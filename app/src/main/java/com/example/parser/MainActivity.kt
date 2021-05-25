@@ -5,27 +5,26 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.work.OneTimeWorkRequest
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.example.parser.ui.main.MainScreen
-import com.example.parser.ui.main.ParserWork
 import com.example.parser.ui.theme.ParserTheme
-import io.ktor.client.*
-import io.ktor.client.request.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*val context = this
+        val myWorkRequest: OneTimeWorkRequest = OneTimeWorkRequestBuilder<ParserWork>()
+            .addTag("parser")
+            .build()
+        val workManager = WorkManager.getInstance(context)
+        val operation: Operation = workManager
+            .enqueueUniqueWork("", androidx.work.ExistingWorkPolicy.REPLACE,myWorkRequest)
 
+        workManager
+            .getWorkInfoByIdLiveData(myWorkRequest.id)*/
 
         setContent {
-           // CoroutineScope(Dispatchers.IO)
+            // CoroutineScope(Dispatchers.IO)
             ParserTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
@@ -33,18 +32,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ParserTheme {
-        Greeting("Android")
     }
 }
